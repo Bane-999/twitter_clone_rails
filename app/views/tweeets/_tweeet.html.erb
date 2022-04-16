@@ -1,7 +1,8 @@
-<div id="<%= dom_id tweeet %>">
-  <p>
-    <strong>Tweeet:</strong>
-    <%= tweeet.tweeet %>
-  </p>
-
-</div>
+  <div class="post">
+      <%= image_tag "1607363622_58434.jpeg", class: "profile-pic" %>                                    
+      <h2 class="username">Name</h2>
+      <span class="post_id">@username</span><br>
+      <p class="comment"><%= tweeet.tweeet %></p>
+      <%= image_tag "message-reply.png", class: "comm-icon" %>              
+      <span class="comm-count">5</span>
+  </div>

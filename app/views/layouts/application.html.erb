@@ -11,6 +11,64 @@
   </head>
 
   <body>
-    <%= yield %>
+    <% if flash[:notice] %>
+      <div class="notification">
+        <p class="notice"><%= notice %></p>
+      </div>
+    <% end %>
+
+     <% if flash[:alert] %>
+      <div class="notification">
+        <p class="alert"><%= alert %></p>
+      </div>
+    <% end %>
+
+    <div class="app-area">
+        <div class="side-left">
+            <a href="https://twitter.com/">
+            <%= image_tag "logo-3491390_1920.svg", class:"logo" %>
+                
+            </a>            
+            
+            <div class="menu-left">
+
+                <div class="links-menu">                    
+                    <%= link_to root_path do%>
+                      <%= image_tag "home.png", class: "icon-menu" %>
+                      <span class="tabs">Home</span>
+                    <% end %>
+                    </a>
+                </div>
+
+                <div class="links-menu">
+                    <a href="index.html">
+                    <%= link_to root_path do%>
+                      <%= image_tag "account.png", class: "icon-menu" %>                        
+                      <span class="tabs">Profile</span>
+                    <% end %>
+                    </a>
+                </div>
+
+                <div class="links-menu">
+                    <button type="submit" class="new-tweet-button">Tweet</button>
+                </div>
+                
+            </div>
+        </div>
+        
+        <div class="header">
+            <div class="header-contents">Home</div>
+        </div>       
+        
+        
+        <div class="trends"></div>    
+
+         <%= yield %> 
+
+    </div>    
+    
+   
+
+     
   </body>
 </html>
