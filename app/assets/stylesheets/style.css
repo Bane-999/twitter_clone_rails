@@ -11,11 +11,12 @@ body, html {
     background-color: #ffffff;
     box-shadow: 1px 3px 35px 0px #00000047;
     display: grid;
-    grid-template: 70px 1fr 12fr / 1fr 2fr 1.8fr;
+    grid-template: 70px 70px 12fr / 0.8fr 2fr 1.8fr;
     grid-template-areas: "side-left home trends"
-                     "side-left posts trends"
+                     "side-left my-post trends"
                      "side-left posts trends";
-    min-width: 1233px;
+    min-width: 1594px;
+    min-height: 291px;
 }
 
 .logo {
@@ -40,7 +41,32 @@ body, html {
     color: white;
     background: #1ca1f1;
     transition: all 0.07s ease;
+    position: absolute;
+    left: -244px;
+    top: 134px;
 }
+
+.input {
+    position: relative;
+    grid-area: my-post;
+    left: 11px;
+    top: 7px;
+}
+
+textarea[id="tweeet_tweeet"] {
+    height: 16px;
+    width: 422px;
+    resize: none;
+    border: none;
+    outline: none;
+    border-radius: 13px;
+    background-color: #eeeeee;
+    padding: 13px;
+    padding-left: 30px;
+    font-family: 'Inter',sans-serif;
+    font-weight: 200;
+}
+
 
 .new-tweet-button:hover {
     filter:drop-shadow(0px 3px 3px rgba(3, 2, 58, 0.253));
@@ -60,7 +86,14 @@ a {
 }
 
 .links-menu {
-    margin-bottom: 21px;
+    margin-bottom: 21px;    
+}
+
+.my-post {
+    grid-area: my-post;
+    border-bottom: 2px solid #eeeeee; 
+    border-left: 2px solid #eeeeee; 
+    border-right: 2px solid #eeeeee; 
 }
 
 .links-menu:hover .tabs {
@@ -136,6 +169,11 @@ a {
     position: relative;
 }
 
+.input-pic {
+    height: 39px;
+    width: 39px;
+}
+
 .post_id,.comment{
     font-family: 'Inter',sans-serif;
     font-weight: 200;
@@ -167,9 +205,9 @@ a {
     max-width: 400px;
 }
 
-.comm-icon {
-    position: relative;
+.comm-icon {    
     height: 22px;
+    position: relative;
     top: -38px;
     left: 68px;
     filter: invert(85%) sepia(5%) saturate(12%) hue-rotate(131deg) brightness(84%) contrast(83%);
@@ -182,4 +220,50 @@ a {
     font-family: 'Inter',sans-serif;
     font-weight: 200;
     font-size: 0.9rem;
+}
+
+.notice {
+    font-family: 'Inter',sans-serif;
+    position: relative;
+    left: 601px;
+    top: 114px;
+    font-weight: 600;
+}
+
+.edit-icon {
+    height: 22px;
+}
+
+.edit-icon-link {
+    position: relative;
+    height: 22px;
+    top: -89px;
+    left: 193px;
+    filter: invert(85%) sepia(5%) saturate(12%) hue-rotate(131deg) brightness(84%) contrast(83%);
+}
+
+.del-button {
+    position: relative;
+    height: 22px;
+    top: -115px;
+    left: 238px;
+    filter: invert(85%) sepia(5%) saturate(12%) hue-rotate(131deg) brightness(84%) contrast(83%);
+}
+
+.view-icon-link {
+    position: relative;
+    height: 22px;
+    top: -38px;
+    left: 86px;
+    filter: invert(85%) sepia(5%) saturate(12%) hue-rotate(131deg) brightness(84%) contrast(83%);
+}
+
+.title {
+    font-family: 'Inter',sans-serif;
+    font-size: 15px;
+
+}
+
+.text {
+    margin-left: 30px;
 }

@@ -1,10 +1,14 @@
-<p style="color: green"><%= notice %></p>
+<div class="posts">
 
-<%= render @tweeet %>
+  <%= render @tweeet %>
 
-<div>
-  <%= link_to "Edit this tweeet", edit_tweeet_path(@tweeet) %> |
-  <%= link_to "Back to tweeets", tweeets_path %>
+  <%= link_to edit_tweeet_path(@tweeet), class: "edit-icon-link" do %>
+    <%= image_tag "edit_black_24dp.svg", class: "edit-icon" %>
+  <% end %>  
 
-  <%= button_to "Destroy this tweeet", @tweeet, method: :delete %>
+  <%= form_with(url: @tweeet, method: "post", class: "del-button") do%>
+    <input type="hidden" name="_method" value="delete" autocomplete="off">
+    <%= image_submit_tag("clear_black_24dp.svg", data: {confirm: "Are you sure?"})%>
+  <% end%>
+  
 </div>

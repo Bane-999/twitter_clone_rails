@@ -183,3 +183,7 @@ a {
     font-weight: 200;
     font-size: 0.9rem;
 }
+
+.notice {
+    grid-area: home;
+}

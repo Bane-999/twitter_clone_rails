@@ -1,4 +1,4 @@
-<%= form_with(model: tweeet) do |form| %>
+<%= form_with(model: tweeet, class: "input") do |form| %>
   <% if tweeet.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(tweeet.errors.count, "error") %> prohibited this tweeet from being saved:</h2>
@@ -11,12 +11,12 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :tweeet, style: "display: block" %>
-    <%= form.text_area :tweeet %>
+  <div class="input">    
+    <%= image_tag "1607363622_58434.jpeg", class: "profile-pic input-pic" %>
+    <%= form.text_area :tweeet, placeholder: "What's happening?" %>
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit 'New Tweeet', :class => "new-tweet-button" %>
   </div>
 <% end %>

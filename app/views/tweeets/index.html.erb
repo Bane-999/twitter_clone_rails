@@ -1,14 +1,9 @@
-<%# <p style="color: green"><= notice ></p> %>
-
 <div class="posts">
   <% @tweeets.each do |tweeet| %>
-    <%= render tweeet %>
-    <%# <p>
-      <= link_to "Show this tweeet", tweeet >
-    </p> %>
+    <%= render tweeet %>    
   <% end %>
 </div>
 
-<%# <div>
-  <= link_to "New tweeet", new_tweeet_path >
-</div> %>
+
+
+<%= render "form", tweeet: @tweeet %>
