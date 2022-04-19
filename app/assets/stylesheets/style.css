@@ -174,10 +174,11 @@ a {
     width: 39px;
 }
 
-.post_id,.comment{
+.post_id, .comment {
     font-family: 'Inter',sans-serif;
     font-weight: 200;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    color: #444444f0;
     margin: 23px 0 0 26px;
 }
 

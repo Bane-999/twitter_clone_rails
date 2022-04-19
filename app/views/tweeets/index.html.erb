@@ -1,9 +1,47 @@
-<div class="posts">
-  <% @tweeets.each do |tweeet| %>
-    <%= render tweeet %>    
-  <% end %>
-</div>
+<div class="app-area">
+         
+  <div class="side-left">
+      <a href="https://twitter.com/">
+      <%= image_tag "logo-3491390_1920.svg", class:"logo" %></a>            
+      
+      <div class="menu-left">
 
+          <div class="links-menu">                    
+              <%= link_to root_path do%>
+                <%= image_tag "home.png", class: "icon-menu" %>
+                <span class="tabs">Home</span>
+              <% end %>
+          </div>
 
+          <div class="links-menu">
+              <%= link_to root_path do%>
+                <%= image_tag "account.png", class: "icon-menu" %>                        
+                <span class="tabs">Profile</span>
+              <% end %>
+          </div>                
+          
+      </div>
 
-<%= render "form", tweeet: @tweeet %>
+  </div>
+
+  <div class="my-post">
+  
+  </div>
+  
+  <div class="header">
+      <div class="header-contents">Home</div>
+  </div>       
+  
+  
+  <div class="trends"></div>   
+
+  <div class="posts">
+      <% @tweeets.each do |tweeet| %>
+        <%= render tweeet %>    
+      <% end %>
+  </div>
+
+  <%= render "form", tweeet: @tweeet %>
+        
+</div>   
+

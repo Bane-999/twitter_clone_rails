@@ -14,8 +14,8 @@ class TweeetsController < ApplicationController
 
   # GET /tweeets/new
   def new 
-    @tweeets = Tweeet.all.order("created_at DESC")
-    @tweeet = Tweeet.new
+    @tweeets = current_user.tweeets.all.order("created_at DESC")
+    @tweeet = current_user.tweeets.build
     
     render :index
   end
@@ -26,8 +26,8 @@ class TweeetsController < ApplicationController
 
   # POST /tweeets or /tweeets.json
   def create
-    @tweeet = Tweeet.new(tweeet_params)
-    @tweeets = Tweeet.all.order("created_at DESC")
+    @tweeet = current_user.tweeets.build(tweeet_params)
+    @tweeets = current_user.tweeets.all.order("created_at DESC")
 
     respond_to do |format|
       if @tweeet.save
