@@ -4,23 +4,32 @@
       <a href="https://twitter.com/">
       <%= image_tag "logo-3491390_1920.svg", class:"logo" %></a>            
       
-      <div class="menu-left">
+      <% if user_signed_in? %>
+          <div class="menu-left">
 
-          <div class="links-menu">                    
-              <%= link_to root_path do%>
-                <%= image_tag "home.png", class: "icon-menu" %>
-                <span class="tabs">Home</span>
-              <% end %>
+              <div class="links-menu">                    
+                  <%= link_to root_path do%>
+                    <%= image_tag "home.png", class: "icon-menu" %>
+                    <span class="tabs">Home</span>
+                  <% end %>
+              </div>
+
+              <div class="links-menu">
+                  <%= link_to edit_user_registration_path do%>
+                    <%= image_tag "account.png", class: "icon-menu" %>                        
+                    <span class="tabs">Profile</span>
+                  <% end %>
+              </div>                
+              
+          </div>
+      <% else %>
+
+          <div class="button_cont">
+              <%= button_to "Sign In", new_user_session_path, method: :get, class: "btn"%>          
+              <%= button_to "Sign Up", new_user_registration_path, method: :get, class: "btn" %>
           </div>
 
-          <div class="links-menu">
-              <%= link_to root_path do%>
-                <%= image_tag "account.png", class: "icon-menu" %>                        
-                <span class="tabs">Profile</span>
-              <% end %>
-          </div>                
-          
-      </div>
+      <% end %>
 
   </div>
 
@@ -29,7 +38,22 @@
   </div>
   
   <div class="header">
-      <div class="header-contents">Home</div>
+      <div class="header-contents">
+          <span>Home</span>
+
+        <% if user_signed_in? %>
+          <div class="x">
+              <%= button_to "Logout", destroy_user_session_path, method: :get, class: "btn", style: "width: 97px;"%>
+          </div>
+
+        <% end %>
+
+      </div>
+
+      
+          
+      
+
   </div>       
   
   
@@ -40,8 +64,9 @@
         <%= render tweeet %>    
       <% end %>
   </div>
-
-  <%= render "form", tweeet: @tweeet %>
+  <% if user_signed_in? %>
+      <%= render "form", tweeet: @tweeet %>
+  <% end %>
         
 </div>   
 

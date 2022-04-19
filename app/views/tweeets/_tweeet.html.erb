@@ -1,15 +1,26 @@
   <div class="post">
-      <%= image_tag "1607363622_58434.jpeg", class: "profile-pic" %>                                    
-      <h2 class="username"><%= tweeet.user.name %></h2>
-      <span class="post_id">@<%= tweeet.user.username %></span><br>
-      <p class="comment"><%= tweeet.tweeet %></p>      
-        
-      <%= link_to new_tweeet_path(tweeet), class: "comm-icon-link" do %>
-        <%= image_tag "favorite_border_black_24dp.svg", class: "comm-icon" %>
-      <% end %>
-              
-      <span class="comm-count">5</span>
-      <%= link_to tweeet, class: "view-icon-link"  do%>
-        <%= image_tag "visibility_black_24dp.svg", class: "view-icon" %>  
-      <% end %>     
+      
+      <div class="post-top">
+          <%= image_tag "1607363622_58434.jpeg", class: "profile-pic" %>                                    
+          <h2 class="username"><%= tweeet.user.name %></h2>
+          <span class="post_id">@<%= tweeet.user.username %></span><br>
+      </div>  
+
+
+      <div class="post-mid">
+          <p class="comment"><%= tweeet.tweeet %></p>  
+      </div>
+
+
+      <div class="post-bot">
+          <%= link_to new_tweeet_path(tweeet), class: "comm-icon-link" do %>
+            <%= image_tag "favorite_border_black_24dp.svg", class: "comm-icon" %>
+          <% end %>
+                  
+          <span class="comm-count">5</span>
+          <%= link_to tweeet, class: "view-icon-link"  do%>
+            <%= image_tag "visibility_black_24dp.svg", class: "view-icon" %>  
+          <% end %>  
+      </div>
+
   </div>

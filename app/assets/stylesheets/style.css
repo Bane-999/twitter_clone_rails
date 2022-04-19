@@ -138,6 +138,13 @@ a {
     font-weight: 800;
     font-size: 1.2rem;
     margin: 22px 0 10px 26px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 656px;
 }
 
 .trends {
@@ -153,11 +160,16 @@ a {
 }
 
 .post {
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    justify-content: flex-start;
+    align-items: flex-start;
     border-bottom: 2px solid #eeeeeea3;
     padding: 22px;
-    grid-area: posts;
     border-bottom: 2px solid #eeeeee;
+    min-height: 112px;
+    max-width: 681px;
 }
 
 .profile-pic {
@@ -178,49 +190,50 @@ a {
     font-family: 'Inter',sans-serif;
     font-weight: 200;
     font-size: 1.1rem;
-    color: #444444f0;
+    color: #545454d9;
     margin: 23px 0 0 26px;
 }
 
-.posts > .post > .profile-pic + .username {
-    position: absolute;
-    top: 13px;
-    left: 91px;
+.posts > .post > .post-top > .profile-pic + .username {
+    position: relative;
+    top: -12px;
+    left: 8px;
     font-family: 'Inter',sans-serif;
     font-weight: 600;
     font-size: 1.1rem;
 }
 
-.post > .post_id {
-    position: absolute;
+.post > .post-top > .post_id {
+    position: relative;
     color: #6c6464;
     font-size: 16px;
-    left: 120px;
-    top: 5px;
+    left: -9px;
+    top: -19px;
 }
 
-.post > .comment {
+.post > .post-mid > .comment {
     position: relative;
-    left: 43px;
-    top: -55px;
+    left: 42px;
+    top: -54px;
     max-width: 400px;
 }
 
-.comm-icon {    
+.comm-icon {
     height: 22px;
     position: relative;
-    top: -38px;
-    left: 68px;
+    top: -44px;
+    left: 67px;
     filter: invert(85%) sepia(5%) saturate(12%) hue-rotate(131deg) brightness(84%) contrast(83%);
 }
 
 .comm-count {
     position: relative;
-    top: -45px;
-    left: 71px;
+    top: -49px;
+    left: 66px;
     font-family: 'Inter',sans-serif;
     font-weight: 200;
-    font-size: 0.9rem;
+    color: #545454d9;
+    font-size: 0.98rem;
 }
 
 .notice {
@@ -238,24 +251,24 @@ a {
 .edit-icon-link {
     position: relative;
     height: 22px;
-    top: -89px;
-    left: 193px;
+    top: -93px;
+    left: 186px;
     filter: invert(85%) sepia(5%) saturate(12%) hue-rotate(131deg) brightness(84%) contrast(83%);
 }
 
 .del-button {
     position: relative;
     height: 22px;
-    top: -115px;
-    left: 238px;
+    top: -119px;
+    left: 223px;
     filter: invert(85%) sepia(5%) saturate(12%) hue-rotate(131deg) brightness(84%) contrast(83%);
 }
 
 .view-icon-link {
     position: relative;
     height: 22px;
-    top: -38px;
-    left: 86px;
+    top: -42px;
+    left: 80px;
     filter: invert(85%) sepia(5%) saturate(12%) hue-rotate(131deg) brightness(84%) contrast(83%);
 }
 
@@ -267,4 +280,21 @@ a {
 
 .text {
     margin-left: 30px;
+}
+
+.post-top {
+    display: flex;
+}
+
+.post-bot {
+    position: relative;
+    top: 0px;
+    left: 0px;
+}
+
+.button_cont {
+    display: flex;
+    flex-direction: column;
+    gap: 23px;
+    margin-top: 40px;
 }
