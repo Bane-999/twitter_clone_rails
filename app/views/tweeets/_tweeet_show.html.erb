@@ -1,30 +1,35 @@
-  <div class="post2">
-      
-      <div class="post-top">
-          <%= image_tag "1607363622_58434.jpeg", class: "profile-pic2" %>                                    
-          <h2 class="username2"><%= tweeet.user.name %></h2>
-          <span class="post_id2">@<%= tweeet.user.username %></span><br>
-      </div>  
+<div class="post2">
+    
+    <div class="post-top">
+        <%= image_tag "1607363622_58434.jpeg", class: "profile-pic2" %>                                    
+        <h2 class="username2"><%= tweeet.user.name %></h2>
+        <span class="post_id2">@<%= tweeet.user.username %></span><br>
+    </div>  
 
-      <div class="post-mid2">
-          <p class="comment2"><%= tweeet.tweeet %></p>  
+    <div class="post-mid2">
+        <p class="comment2"><%= tweeet.tweeet %></p>  
+    </div>
+
+    
+      <div class="post-bot2">   
+
+          <div class="comm-icon-link2">
+
+            <%= form_with(url: likes_path, method: "post", class: "comm-icon2") do%>
+              <input type="hidden" name="like[tweeet_id]" value="<%= tweeet.id%>" autocomplete="off">
+              <%= image_submit_tag("favorite_border_black_24dp.svg")%>
+            <% end%>
+
+          </div>  
+                  
+          <span class="comm-count2"><%= tweeet.likes.count%></span>
+        
+              <%= link_to tweeet, class: "view-icon-link2"  do%>
+                <%= image_tag "visibility_black_24dp.svg", class: "view-icon" %>  
+              <% end %>    
+
       </div>
-
-      
-        <div class="post-bot2">
-            <%= link_to new_tweeet_path(tweeet), class: "comm-icon-link" do %>
-              <%= image_tag "favorite_border_black_24dp.svg", class: "comm-icon" %>
-            <% end %>
-                    
-            <span class="comm-count">5</span>
-
-          
-                <%= link_to tweeet, class: "view-icon-link"  do%>
-                  <%= image_tag "visibility_black_24dp.svg", class: "view-icon" %>  
-                <% end %>    
-
-        </div>
-      
+    
 
 
-  </div>
+</div>

@@ -234,8 +234,8 @@ a {
 
 .comm-count {
     position: relative;
-    top: -49px;
-    left: 66px;
+    top: -72px;
+    left: 95px;
     font-family: 'Inter',sans-serif;
     font-weight: 200;
     color: #545454d9;
@@ -257,24 +257,24 @@ a {
 .edit-icon-link {
     position: relative;
     height: 22px;
-    top: -93px;
-    left: 186px;
+    top: -92px;
+    left: 170px;
     filter: invert(85%) sepia(5%) saturate(12%) hue-rotate(131deg) brightness(84%) contrast(83%);
 }
 
 .del-button {
     position: relative;
     height: 22px;
-    top: -119px;
-    left: 223px;
+    top: -118px;
+    left: 214px;
     filter: invert(85%) sepia(5%) saturate(12%) hue-rotate(131deg) brightness(84%) contrast(83%);
 }
 
 .view-icon-link {
     position: relative;
     height: 22px;
-    top: -42px;
-    left: 80px;
+    top: -65px;
+    left: 107px;
     filter: invert(85%) sepia(5%) saturate(12%) hue-rotate(131deg) brightness(84%) contrast(83%);
 }
 

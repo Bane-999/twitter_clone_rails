@@ -100,3 +100,33 @@
     left: 54px;
     top: 67px;
 }
+
+.comm-count2 {
+    position: relative;
+    top: -49px;
+    left: 68px;
+    font-family: 'Inter',sans-serif;
+    font-weight: 200;
+    color: #545454d9;
+    font-size: 0.98rem;
+}
+
+.view-icon-link2 {
+    position: relative;
+    height: 22px;
+    top: -43px;
+    left: 83px;
+    filter: invert(85%) sepia(5%) saturate(12%) hue-rotate(131deg) brightness(84%) contrast(83%);
+}
+
+.comm-icon2 {
+    height: 22px;
+    position: relative;
+    top: -21px;
+    left: 40px;
+    filter: invert(85%) sepia(5%) saturate(12%) hue-rotate(131deg) brightness(84%) contrast(83%);
+}
+
+.comm-icon-link2 > .comm-icon2:hover {
+    filter: invert(29%) sepia(100%) saturate(2602%) hue-rotate(342deg) brightness(86%) contrast(102%);
+}
