@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;600;800&display=swap');
 
 body, html {
-    margin: 0;    
+    margin: 0;
+    background: #cae7ff;
 }
   
 .app-area {
@@ -224,6 +225,10 @@ a {
     top: -44px;
     left: 67px;
     filter: invert(85%) sepia(5%) saturate(12%) hue-rotate(131deg) brightness(84%) contrast(83%);
+}
+
+.comm-icon-link > .comm-icon:hover {
+    filter: invert(29%) sepia(100%) saturate(2602%) hue-rotate(342deg) brightness(86%) contrast(102%);
 }
 
 .comm-count {

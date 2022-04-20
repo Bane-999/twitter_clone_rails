@@ -1,5 +1,26 @@
 <h1 class="text">Editing tweeet</h1>
 
-<%= render "form", tweeet: @tweeet %>
+<%= form_with(model: @tweeet, class: "input") do |form| %>
+  <% if @tweeet.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(@tweeet.errors.count, "error") %> prohibited this tweeet from being saved:</h2>
+
+      <ul>
+        <% @tweeet.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="input">    
+    <%= image_tag "1607363622_58434.jpeg", class: "profile-pic input-pic" %>
+    <%= form.text_area :tweeet, placeholder: "What's happening?" %>
+  </div>
+
+  <div>
+    <%= form.submit 'New Tweeet', :class => "new-tweet-button2" %>
+  </div>
+<% end %>
 
 

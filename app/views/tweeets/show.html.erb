@@ -1,14 +1,20 @@
-<div class="posts">
+<div class="login-area2">
+    
+    <div class="posts2">
 
-  <%= render @tweeet %>
+      <%= render "tweeet_show", tweeet: @tweeet %>
 
-  <%= link_to edit_tweeet_path(@tweeet), class: "edit-icon-link" do %>
-    <%= image_tag "edit_black_24dp.svg", class: "edit-icon" %>
-  <% end %>  
+<div class="post-bot2">
+      <%= link_to edit_tweeet_path(@tweeet), class: "edit-icon-link" do %>
+        <%= image_tag "edit_black_24dp.svg", class: "edit-icon" %>
+      <% end %>  
 
-  <%= form_with(url: @tweeet, method: "post", class: "del-button") do%>
-    <input type="hidden" name="_method" value="delete" autocomplete="off">
-    <%= image_submit_tag("clear_black_24dp.svg", data: {confirm: "Are you sure?"})%>
-  <% end%>
-  
+      <%= form_with(url: @tweeet, method: "post", class: "del-button") do%>
+        <input type="hidden" name="_method" value="delete" autocomplete="off">
+        <%= image_submit_tag("clear_black_24dp.svg", data: {confirm: "Are you sure?"})%>
+      <% end%>
+</div>
+      
+    </div> 
+
 </div>

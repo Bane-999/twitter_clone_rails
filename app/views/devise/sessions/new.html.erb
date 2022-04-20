@@ -5,6 +5,7 @@
   <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     
     <div class="form-inputs">
+    
       <div class="input_log email optional user_email">
         <input placeholder="Email" autocomplete="email" class="log-bar string email optional" autofocus="autofocus" type="email" value="" name="user[email]" id="user_email">
       </div>
@@ -18,6 +19,7 @@
         <label class="boolean optional checkbox" for="user_remember_me">
         <input class="boolean optional" type="checkbox" value="1" name="user[remember_me]" id="user_remember_me">Remember me</label>
       </div>
+
     </div>
 
     <div class="form-actions-log">
@@ -31,4 +33,4 @@
     
   <% end %>
   
-</div>
+</div> 
