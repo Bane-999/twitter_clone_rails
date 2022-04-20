@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_04_19_195843) do
+ActiveRecord::Schema[7.0].define(version: 2022_04_20_015555) do
+  create_table "likes", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "tweeet_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["tweeet_id"], name: "index_likes_on_tweeet_id"
+    t.index ["user_id", "tweeet_id"], name: "index_likes_on_user_id_and_tweeet_id", unique: true
+    t.index ["user_id"], name: "index_likes_on_user_id"
+  end
+
   create_table "tweeets", force: :cascade do |t|
     t.text "tweeet"
     t.datetime "created_at", null: false
@@ -33,4 +43,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_19_195843) do
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
+  add_foreign_key "likes", "tweeets"
+  add_foreign_key "likes", "users"
 end

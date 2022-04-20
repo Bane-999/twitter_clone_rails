@@ -227,6 +227,7 @@ a {
     filter: invert(85%) sepia(5%) saturate(12%) hue-rotate(131deg) brightness(84%) contrast(83%);
 }
 
+
 .comm-icon-link > .comm-icon:hover {
     filter: invert(29%) sepia(100%) saturate(2602%) hue-rotate(342deg) brightness(86%) contrast(102%);
 }

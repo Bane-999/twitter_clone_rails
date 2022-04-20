@@ -13,16 +13,21 @@
 
       <% if user_signed_in? %>
         <div class="post-bot">
-            <%= link_to new_tweeet_path(tweeet), class: "comm-icon-link" do %>
-              <%= image_tag "favorite_border_black_24dp.svg", class: "comm-icon" %>
-            <% end %>
-                    
-            <span class="comm-count">5</span>
-
           
-                <%= link_to tweeet, class: "view-icon-link"  do%>
-                  <%= image_tag "visibility_black_24dp.svg", class: "view-icon" %>  
-                <% end %>              
+            <div class="comm-icon-link">
+
+              <%= form_with(url: likes_path, method: "post", class: "comm-icon") do%>
+                <input type="hidden" name="like[tweeet_id]" value="<%= tweeet.id%>" autocomplete="off">
+                <%= image_submit_tag("favorite_border_black_24dp.svg")%>
+              <% end%>
+
+            </div>            
+                    
+            <span class="comm-count"><%= tweeet.likes.count%></span>
+          
+            <%= link_to tweeet, class: "view-icon-link"  do%>
+              <%= image_tag "visibility_black_24dp.svg", class: "view-icon" %>  
+            <% end %>              
         </div>
       <% else %>
         <div class="post-bot">
