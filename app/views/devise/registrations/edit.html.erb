@@ -26,18 +26,21 @@
           <input placeholder="Current Password" autocomplete="current-password" class="log-bar password required" required="required" aria-required="true" type="password" name="user[current_password]" id="current_user_password">
       </div>
 
+      <div class="avatar_field">
+          <label class="avatar_label" for="user_avatar">Set your Avatar:</label>
+          <%= f.file_field :avatar %>
+      </div>
+
     </div>
 
     <div class="form-actions-log">
       <%= f.button :submit, "Update", class: "btn" %>
-      <%= render "devise/shared/links"%> 
      
       <%= link_to "Cancel my account", registration_path(resource_name), data: { "turbo-method": :delete, confirm: "Are you sure?"} %>
       <%= link_to "Back", :back %>
 
     </div>
-  <% end %>
 
-  
+  <% end %>
   
 </div>

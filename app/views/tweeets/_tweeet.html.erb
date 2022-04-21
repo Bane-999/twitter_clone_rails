@@ -1,17 +1,23 @@
   <div class="post">
       
       <div class="post-top">
-          <%= image_tag "1607363622_58434.jpeg", class: "profile-pic" %>                                    
-          <h2 class="username"><%= tweeet.user.name %></h2>
-          <span class="post_id">@<%= tweeet.user.username %></span><br>
+          <% if tweeet.user.avatar.attached? %>
+              <%= image_tag tweeet.user.avatar, class: "profile-pic" %>                                    
+              <h2 class="username"><%= tweeet.user.name %></h2>
+              <span class="post_id">@<%= tweeet.user.username %></span><br>
+          <% else %>
+              <%= image_tag "EWAJB4WUcAAje8s.png", class: "profile-pic" %>                                    
+              <h2 class="username"><%= tweeet.user.name %></h2>
+              <span class="post_id">@<%= tweeet.user.username %></span><br>
+          <% end %>
       </div>  
-
+      
 
       <div class="post-mid">
           <p class="comment"><%= tweeet.tweeet %></p>  
       </div>
 
-      <% if user_signed_in? %>
+      
         <div class="post-bot">
           
             <div class="comm-icon-link">
@@ -25,16 +31,22 @@
                     
             <span class="comm-count"><%= tweeet.likes.count%></span>
           
-            <%= link_to tweeet, class: "view-icon-link"  do%>
-              <%= image_tag "visibility_black_24dp.svg", class: "view-icon" %>  
-            <% end %>              
+            <% if current_user.name == tweeet.user.name %>                 
+              <%= link_to tweeet, class: "view-icon-link" do%>
+                  <%= image_tag "visibility_black_24dp.svg", class: "view-icon" %>  
+              <% end %>  
+            <% else %>  
+                <%= link_to root_path, class: "view-icon-link" do%>
+                  <%= image_tag "visibility_black_24dp.svg", class: "view-icon" %>  
+                <% end %>              
+            <% end %>   
+
+
         </div>
-      <% else %>
-        <div class="post-bot">
-            <%= image_tag "favorite_border_black_24dp.svg", class: "comm-icon" %>                    
-            <span class="comm-count">5</span>
-        </div>
-      <% end %> 
+      
+      
 
 
   </div>
+
+  

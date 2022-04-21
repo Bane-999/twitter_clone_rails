@@ -1,7 +1,12 @@
 <div class="post2">
     
     <div class="post-top">
-        <%= image_tag "1607363622_58434.jpeg", class: "profile-pic2" %>                                    
+        <% if tweeet.user.avatar.attached?%>
+            <%= image_tag tweeet.user.avatar, class: "profile-pic2" %> 
+        <% else %>
+            <%= image_tag "EWAJB4WUcAAje8s.png", class: "profile-pic2" %> 
+        <% end %>
+                                              
         <h2 class="username2"><%= tweeet.user.name %></h2>
         <span class="post_id2">@<%= tweeet.user.username %></span><br>
     </div>  

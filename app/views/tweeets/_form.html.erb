@@ -12,7 +12,13 @@
   <% end %>
 
   <div class="input">    
-    <%= image_tag "1607363622_58434.jpeg", class: "profile-pic input-pic" %>
+    
+    <% if current_user.avatar.attached? %>
+        <%= image_tag current_user.avatar, class: "profile-pic input-pic" %>        
+    <% else %>
+        <%= image_tag "EWAJB4WUcAAje8s.png", class: "profile-pic input-pic" %>        
+    <% end %>
+
     <%= form.text_area :tweeet, placeholder: "What's happening?" %>
   </div>
 

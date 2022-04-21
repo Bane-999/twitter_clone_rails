@@ -50,8 +50,8 @@
 
 .posts2 > .post2 > .post-top > .profile-pic2 + .username2 {
     position: relative;
-    top: -12px;
-    left: 8px;
+    top: 24px;
+    left: 23px;
     font-family: 'Inter',sans-serif;
     font-weight: 600;
     font-size: 2.5rem;
@@ -61,8 +61,8 @@
     position: relative;
     color: #6c6464;
     font-size: 1.5rem;
-    left: -9px;
-    top: 10px;
+    left: 18px;
+    top: 46px;
 }
 
 .post-mid2 {
